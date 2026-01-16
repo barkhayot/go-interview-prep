@@ -1,6 +1,6 @@
-# New Problem — Concurrent Expiring Cache (TTL Cache)
+# Concurrent Expiring Cache (TTL Cache)
 
-Design an in-memory cache with TTL.
+> Design an in-memory cache with TTL.
 
 ### Requirements
 
