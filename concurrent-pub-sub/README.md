@@ -1,4 +1,4 @@
-# New Problem — Concurrent Pub/Sub (In-Memory)
+# Concurrent Pub/Sub (In-Memory)
 
 > Design a simple publish–subscribe system.
 
