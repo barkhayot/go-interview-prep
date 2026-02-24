@@ -11,7 +11,8 @@ This repository contains short Go interview problems and reference implementatio
 - [Rate Limiter 2 (Alternative Implementation)](rate-limiter-2/README.md)
 - [Sharded Map](sharded-map/README.md)
 - [Custom WaitGroup Implementation](waitgroup/README.md)
-
+- [Custom Sync Once Implementation (Mutexes)](sync-once/README.md)
+- [Custom Sync Once Implementation 2 (Atomic)](sync-once-2/README.md)
 ## Contributing
 
 Add new problems, improve explanations, or provide alternative solutions. Open a pull request with a short description of your changes.
