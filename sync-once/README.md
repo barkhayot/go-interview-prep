@@ -33,5 +33,3 @@ once.Do(func() {
   println("This will not be printed.")
 })
 ```
-
----
