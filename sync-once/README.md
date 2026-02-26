@@ -1,15 +1,37 @@
-# sync-once
+# Sync-once (Custom sync.Once)
 
-This package demonstrates the use of Go's `sync.Once` primitive.
+> Implements a simplified version of Go's sync.Once for one-time initialization in concurrent programs.
 
-## Overview
+### Problem
 
-The `sync.Once` type ensures that a function is only executed once, even if called from multiple goroutines. This is useful for one-time initialization logic in concurrent programs.
+Design a synchronization primitive that ensures a function is executed only once, even if called from multiple goroutines.
 
-## Usage
+### Requirements
 
-- Run the example with:
-  ```sh
-  go run main.go
-  ```
-- The output will show that the initialization logic is executed only once, regardless of how many goroutines attempt to run it.
+- Only one execution of the function, even with concurrent calls
+- Safe for concurrent use
+- No external libraries (standard Go only)
+
+### Interface
+
+```go
+type Once struct {}
+
+func (o *Once) Do(f func())
+```
+
+### Example
+
+```go
+var once Once
+
+once.Do(func() {
+  println("This will only be printed once.")
+})
+
+once.Do(func() {
+  println("This will not be printed.")
+})
+```
+
+---

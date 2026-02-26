@@ -1,15 +1,37 @@
-# sync-once-2
+# Sync-once-2 (Atomic sync.Once)
 
-This package provides an alternative or extended example of using Go's `sync.Once` primitive.
+> Implements a version of sync.Once using atomic operations for one-time initialization in concurrent programs.
 
-## Overview
+### Problem
 
-Like the first `sync-once` package, this demonstrates how to ensure a function is executed only once, even in the presence of multiple goroutines. You can use this as a reference for different patterns or variations on one-time initialization.
+Design a synchronization primitive that ensures a function is executed only once, even if called from multiple goroutines, using atomic operations.
 
-## Usage
+### Requirements
 
-- Run the example with:
-  ```sh
-  go run main.go
-  ```
-- Observe that the initialization logic is executed only once, regardless of concurrent calls.
+- Only one execution of the function, even with concurrent calls
+- Safe for concurrent use
+- No external libraries (standard Go only)
+
+### Interface
+
+```go
+type Once struct {}
+
+func (o *Once) Do(f func())
+```
+
+### Example
+
+```go
+var once Once
+
+once.Do(func() {
+  println("This will only be printed once.")
+})
+
+once.Do(func() {
+  println("This will not be printed.")
+})
+```
+
+---
